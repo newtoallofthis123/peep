@@ -7,11 +7,19 @@
     "github",
     "play",
     "music",
-    "open"
+    "open",
+    "editor"
   ],
   "engines": {
     "google": "https://www.google.com/search?q=",
     "ddg": "https://duckduckgo.com/?q=",
-    "sp": "https://www.startpage.com"
+    "duck": "https://duckduckgo.com/?q=",
+    "duckduckgo": "https://duckduckgo.com/?q=",
+    "sp": "https://www.startpage.com/do/metasearch.pl?query=",
+    "startpage": "https://www.startpage.com/do/metasearch.pl?query=",
+    "youtube": "https://www.youtube.com/results?search_query=",
+    "yt": "https://www.youtube.com/results?search_query=",
+    "github": "https://github.com/search?q=",
+    "gh": "https://github.com/search?q="
   }
 }

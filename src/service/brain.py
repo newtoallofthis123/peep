@@ -18,3 +18,21 @@ def get_args():
 def copy(text):
     c_print(f"Copying {text} to clipboard...")
     pyperclip.copy(text)
+
+def platform():
+    import platform
+
+    if platform.system() == "Windows":
+        return "win"
+    elif platform.system() in ["Linux", "Darwin"]:
+        return "unix"
+    else:
+        return None
+
+def cls():
+    if platform() == "win":
+        os.system("cls")
+    elif platform() == "unix":
+        os.system("clear")
+    else:
+        pass

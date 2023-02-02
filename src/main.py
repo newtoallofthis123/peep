@@ -4,8 +4,13 @@ from service.brain import *
 def main():
     args = get_args()[0]
     query = get_args()[1]
-
-    act(args, query)
+    execute = Execute(args[1], query)
+    do_what = args[0]
+    if do_what in get_ops()["args"]:
+        if do_what == "search":
+            execute.search()
+        if do_what == "editor":
+            execute.editor()
 
 if __name__ == '__main__':
     main()
