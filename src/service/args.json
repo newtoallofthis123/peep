@@ -1,0 +1,17 @@
+{
+  "args": [
+    "search",
+    "ai",
+    "ask",
+    "youtube",
+    "github",
+    "play",
+    "music",
+    "open"
+  ],
+  "engines": {
+    "google": "https://www.google.com/search?q=",
+    "ddg": "https://duckduckgo.com/?q=",
+    "sp": "https://www.startpage.com"
+  }
+}
