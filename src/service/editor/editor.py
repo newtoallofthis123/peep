@@ -27,7 +27,7 @@ class Editor:
         app = Flask(__name__)
         @app.route("/")
         def home():
-            return render_template("editor.html", lang=lang, content=content, file_path=file_path)
+            return render_template("editor.html", lang=lang, content=content, file_path=file_path, file=self.file)
 
         @app.route('/write', methods=["POST"])
         def write():
