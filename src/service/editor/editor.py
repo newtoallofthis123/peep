@@ -1,5 +1,4 @@
 import os
-from .web import *
 from ..format import *
 class Editor:
     def __init__(self, file, lang):
@@ -7,7 +6,7 @@ class Editor:
         self.lang = lang
 
     def exits(self):
-        return os.path.exists(self.file)
+        return os.path.exists(self.filepath())
 
     def filepath(self):
         return os.path.join(os.path.dirname(__file__), self.file)
@@ -23,11 +22,24 @@ class Editor:
             file.write(content)
             return True
 
-    def open(self, content):
+    def server(self, lang, content, file_path):
+        from flask import Flask, render_template, request
+        app = Flask(__name__)
+        @app.route("/")
+        def home():
+            return render_template("editor.html", lang=lang, content=content, file_path=file_path)
+
+        @app.route('/write', methods=["POST"])
+        def write():
+            content = request.form.get("content")
+            self.write(content)
+            return "Wrote Content"
+
+        app.run(port=8000)
+    def open(self):
         if self.exits():
-            if content is None:
-                content = self.content()
-            # server(self.lang, content)
+            self.server(self.lang, self.content(), self.filepath())
         else:
+            print(self.filepath())
             c_print(f"File {self.file} doesn't exist", code="danger")
             return False

@@ -1,9 +1,8 @@
 from .brain import *
 from urllib.parse import quote
+from .editor.editor import *
 from .format import *
-from editor.editor import *
 import webbrowser
-import os
 
 class Execute:
     def __init__(self, action, query):
@@ -27,4 +26,5 @@ class Execute:
             c_print(f"No info found on Search Engine : {engine}", code="danger")
 
     def editor(self):
-        editor = Editor()
+        editor_instance = Editor("web.py", "python")
+        editor_instance.open()

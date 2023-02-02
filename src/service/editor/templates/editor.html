@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--    {{ content }}-->
+    <form action="/write" method="post">
+        <input type="text" name="title" placeholder="title">
+        <textarea type="text" name="content" placeholder="content">{{ content }}</textarea>
+        <input type="submit" value="submit">
+    </form>
+</body>
+</html>
