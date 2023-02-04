@@ -19,6 +19,10 @@ def main():
             execute.qr()
         if do_what == "img_qr":
             execute.img_qr()
+        if do_what == "yt":
+            execute.yt()
+        if do_what == "music":
+            execute.music()
 
 if __name__ == '__main__':
     main()

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>YTPS Playing {{ info["title"] }}</title>
+    <link rel='shortcut icon' href='{{ url_for("static", filename="icon.ico" ) }}' type='image/x-icon'>
+</head>
+<style>
+    ::-moz-selection { /* Code for Firefox */
+      color: #ECECF2;
+      background: #1A15F0;
+    }
+
+    ::selection {
+      color: #ECECF2;
+      background: #1A15F0;
+    }
+
+    :root{
+        overscroll-behavior: none;
+    }
+
+    .nav_title {
+        font-size: 1.8rem;
+        font-family: 'Noto Sans Mono', 'Courier New', Courier, monospace;
+        text-align: center;
+    }
+    .video-div{
+        text-align: center;
+    }
+    h1{
+        font-family: "Archivo Black", -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Open Sans", "Helvetica Neue", "Icons16", sans-serif;
+        font-size: 3rem;
+        text-align: center;
+    }
+    video{
+        width: 100%;
+        height: 100vh;
+    }
+</style>
+<nav>
+    <h1 class="nav_title">🔍 YTPSLive Player v.0.1</h1>
+</nav>
+<body>
+    <h1>{{ info["title"] }}</h1>
+    <div class="video-div">
+        <video src='{{ stream }}' controls playsinline poster="{{ info['thumbnail'] }}" title="Url Stream"></video>
+    </div>
+</body
+</html>

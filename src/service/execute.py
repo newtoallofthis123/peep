@@ -56,3 +56,23 @@ class Execute:
         from .qr.qr import Qr
         qr = Qr(self.action, self.query)
         qr.img_qr()
+
+    def yt(self):
+        if self.action == "search":
+            from .yt.yt import Yt
+            search = Yt(self.query)
+            search.search()
+        if self.action == "video":
+            from .yt.yt import Yt
+            video = Yt(self.query)
+            video.get_video()
+        if self.action == "download":
+            from .yt.yt import Yt
+            download = Yt(self.query)
+            download.dl_video()
+
+    def music(self):
+        if self.action == "download":
+            from .yt.yt import Yt
+            download = Yt(self.query)
+            download.dl_audio()
