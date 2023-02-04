@@ -4,12 +4,12 @@
     "ai",
     "ask",
     "youtube",
-    "github",
     "play",
     "music",
     "open",
     "editor",
-    "md"
+    "md",
+    "qr"
   ],
   "engines": {
     "google": "https://www.google.com/search?q=",

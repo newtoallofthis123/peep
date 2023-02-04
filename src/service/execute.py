@@ -38,3 +38,16 @@ class Execute:
         c_print(f"Trying to Open {file} in SnakeRun + HTMLer Markdown Editor", code="info")
         md_instance = Md(file)
         md_instance.up()
+
+    def ai(self):
+        from .ai.key import Key
+        key = Key()
+        api_key = key.get_key()
+        from .ai.ai import Ai
+        ai = Ai(api_key)
+        ai.ask(self.query)
+
+    def qr(self):
+        from .qr.qr import Qr
+        qr = Qr(self.action, self.query)
+        qr.make()

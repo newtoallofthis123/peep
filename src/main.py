@@ -13,6 +13,10 @@ def main():
             execute.editor()
         if do_what == "md":
             execute.md()
+        if do_what == "ai":
+            execute.ai()
+        if do_what == "qr":
+            execute.qr()
 
 if __name__ == '__main__':
     main()
