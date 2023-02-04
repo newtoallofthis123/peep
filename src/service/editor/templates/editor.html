@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>SnakeRun Editing {{filename}}</title>
-    <link rel="stylesheet" href="{{ url_for('static',filename='master.css') }}">
+    <link rel='shortcut icon' href='{{ url_for("static", filename="icon.ico" ) }}' type='image/x-icon'>
 </head>
 <style>
     ::-moz-selection { /* Code for Firefox */
@@ -58,7 +58,7 @@
     <form action="/write" method="post">
         <input type="hidden" name="name" value="{{ filename_adv }}" />
         <div id="canvas">
-            <textarea name="three_dots" id="three_dots" cols="1" rows="1" class="textarea"> 🔴🟢🟡 File Name: {{ filename }}</textarea>
+            <textarea name="three_dots" id="three_dots" cols="1" rows="1" class="textarea"> 🔴🟢🟡 File Name: {{ file_path }}</textarea>
             <textarea name="content" id="content" cols="30" rows="10" spellcheck="true" placeholder="Start Typing..." autofocus="true">{{ content }}</textarea>
         </div>
         <div style="text-align: center;">

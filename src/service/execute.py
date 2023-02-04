@@ -26,5 +26,12 @@ class Execute:
             c_print(f"No info found on Search Engine : {engine}", code="danger")
 
     def editor(self):
-        editor_instance = Editor("web.py", "python")
+        file = self.action
+        lang = self.query
+        editor_instance = Editor(file, lang)
         editor_instance.open()
+
+    def md(self):
+        file = self.action
+        md_instance = Md(file)
+        md_instance.up()

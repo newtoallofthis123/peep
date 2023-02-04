@@ -11,6 +11,8 @@ def main():
             execute.search()
         if do_what == "editor":
             execute.editor()
+        if do_what == "md":
+            execute.md()
 
 if __name__ == '__main__':
     main()
