@@ -1,0 +1,6 @@
+rich
+flask
+pyqrcode
+pypng
+openai
+pyzbar
