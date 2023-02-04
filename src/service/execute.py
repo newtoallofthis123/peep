@@ -1,6 +1,5 @@
 from .brain import *
 from urllib.parse import quote
-from .editor.editor import *
 from .format import *
 import webbrowser
 
@@ -26,12 +25,16 @@ class Execute:
             c_print(f"No info found on Search Engine : {engine}", code="danger")
 
     def editor(self):
+        from .editor.editor import Editor
         file = self.action
         lang = self.query
+        c_print(f"Trying to Open {file} in SnakeRun Editor", code="info")
         editor_instance = Editor(file, lang)
         editor_instance.open()
 
     def md(self):
+        from .editor.editor import Md
         file = self.action
+        c_print(f"Trying to Open {file} in SnakeRun + HTMLer Markdown Editor", code="info")
         md_instance = Md(file)
         md_instance.up()

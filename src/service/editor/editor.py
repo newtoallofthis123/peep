@@ -61,7 +61,6 @@ class Md:
     def up(self):
         from flask import render_template, Flask, request
         app = Flask(__name__)
-
         def read(filename):
             try:
                 file = open(filename, 'r')
