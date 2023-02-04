@@ -4,3 +4,4 @@ pyqrcode
 pypng
 openai
 pyzbar
+segno
