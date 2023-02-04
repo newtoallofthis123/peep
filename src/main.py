@@ -17,6 +17,8 @@ def main():
             execute.ai()
         if do_what == "qr":
             execute.qr()
+        if do_what == "img_qr":
+            execute.img_qr()
 
 if __name__ == '__main__':
     main()

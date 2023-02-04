@@ -51,3 +51,8 @@ class Execute:
         from .qr.qr import Qr
         qr = Qr(self.action, self.query)
         qr.make()
+
+    def img_qr(self):
+        from .qr.qr import Qr
+        qr = Qr(self.action, self.query)
+        qr.img_qr()
