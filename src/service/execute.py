@@ -3,10 +3,12 @@ from urllib.parse import quote
 from .format import *
 import webbrowser
 
+
 class Execute:
     def __init__(self, action, query):
         self.action = action
         self.query = query
+
     def search(self):
         engine = self.action
         query = self.query
@@ -122,3 +124,13 @@ class Execute:
             from .help.setting import Setting
             setting = Setting(self.action, self.query)
             setting.setting()
+
+    def file(self):
+        from .run.file import File
+        file = File(self.query)
+        if self.action == "run":
+            file.run()
+        if self.action == "delete":
+            file.delete()
+        if self.action == "edit":
+            file.edit()

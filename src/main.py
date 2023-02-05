@@ -1,7 +1,10 @@
-import sys
 from service.execute import *
 from service.brain import *
+
+
 def main():
+    from rich.traceback import install
+    install(show_locals=True)
     if len(sys.argv) == 1:
         c_print("No arguments provided, exiting...\nUse peep help for more info", code="danger")
         response = prompt("Type 'help' to get help, press any key to exit")
@@ -39,6 +42,8 @@ def main():
                 execute.music()
             if do_what == "setting":
                 execute.setting()
+            if do_what == "file":
+                execute.file()
 
 if __name__ == '__main__':
     main()

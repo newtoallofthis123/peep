@@ -1,10 +1,13 @@
 import os
 
+
 def dir_make(file):
     import os
     home_dir = os.path.expanduser('~')
     os.mkdir(os.path.join(home_dir, ".peep")) if not os.path.exists(os.path.join(home_dir, ".peep")) else None
     return os.path.join(home_dir, ".peep", file)
+
+
 def check_intro():
     if os.path.exists(dir_make("intro.txt")) and open(dir_make("intro.txt"), "r").read() == "True":
         return True
@@ -12,6 +15,7 @@ def check_intro():
         with open(dir_make("intro.txt"), "w") as file:
             file.write("True")
         return False
+
 
 def check_reqs():
     import sys
@@ -33,17 +37,22 @@ def check_reqs():
             print("Invalid Response")
             exit()
 
+
 def set_alias():
     import os
     import platform
     if platform.system() == "Windows":
         os.system("doskey peep=python " + os.path.join(os.getcwd(), "src", "main.py") + " $*")
-        print("Alias set! on cmd. To set it on pwsh, run the command: Set-Alias -Name peep -Value python " + os.path.join(os.getcwd(), "src", "main.py") + " $*")
+        print(
+            "Alias set! on cmd. To set it on powershell, run the command: Set-Alias -Name peep -Value python " + os.path.join(
+                os.getcwd(), "src", "main.py") + " $*")
     elif platform.system() in ["Linux", "Darwin"]:
         os.system("alias peep=python " + os.path.join(os.getcwd(), "src", "main.py") + " $*")
         print("Alias set!")
     else:
         print("Your platform is not supported for aliasing.")
+
+
 def intro():
     if not check_intro():
         print("Welcome to Peep!")
@@ -52,7 +61,7 @@ def intro():
         check_reqs()
         print("Peep is ready to use!")
         from rich.console import Console
-        from rich.prompt import Prompt, Confirm
+        from rich.prompt import Confirm
         console = Console()
         alias_response = Confirm.ask("Do you want to set an alias for Peep?")
         if alias_response:
@@ -65,6 +74,7 @@ def intro():
         print("Peep is ready to use!")
         print("If your alias is not working, run the command: peep run alias")
         print("If you want to reset your intro, run the command: peep run reset")
+
 
 if __name__ == "__main__":
     intro()

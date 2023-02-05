@@ -12,7 +12,8 @@
     "img_qr",
     "help",
     "run",
-    "setting"
+    "setting",
+    "file"
   ],
   "engines": {
     "google": "https://www.google.com/search?q=",
@@ -40,5 +41,20 @@
     ".java": "java",
     ".json": "json",
     ".md": "markdown"
+  },
+  "file_run": {
+    "python": "python",
+    "javascript": "node",
+    "xml": "default",
+    "html": "default",
+    "css": "default",
+    "jsx": "default",
+    "text": "default",
+    "htmlx": "default",
+    "ruby": "ruby",
+    "cpp": "g++",
+    "java": "javac",
+    "json": "default",
+    "markdown": "default"
   }
 }
