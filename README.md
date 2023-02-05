@@ -1,5 +1,5 @@
 
-![Header Image](/docs/static/header_raw.svg)
+<img style="width: 50%" src="/docs/static/header_raw.svg" alt="Header">
 
 ## Personalized Environment and Execution Prompt
 
