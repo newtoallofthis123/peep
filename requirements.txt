@@ -5,3 +5,4 @@ pypng
 openai
 pyzbar
 segno
+youtube_dl
