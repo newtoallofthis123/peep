@@ -11,10 +11,12 @@ For now, there is no pypi package for peep but there are plans to make one in th
 
 Using start.py installs all the dependencies and bootstraps the package to act as a cli. It also adds it to the alias. If you want to do this manually, you can add the alias to your bashrc or zshrc file. To set alias, run  `alias peep=$pwd/src/main.py`
 
-`git  clone  [https://github.com/newtoallofthis123/peep.git](https://github.com/newtoallofthis123/peep)  
+```shell
+git  clone  [https://github.com/newtoallofthis123/peep.git](https://github.com/newtoallofthis123/peep)  
 cd  peep  
 pip  install  -r  requirements.txt  
 python3  start.py`
+```
 
 ## Usage
 
