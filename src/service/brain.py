@@ -8,8 +8,8 @@ def get_ops():
         options = json.loads(file.read())
         return options
 def get_args():
-    if len(sys.argv[1:]) == 0:
-        return None
+    if len(sys.argv[2:]) == 0:
+        return sys.argv[1]
     else:
         args = sys.argv[1:]
         query = ' '.join(sys.argv[3:])
