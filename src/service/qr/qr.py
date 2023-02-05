@@ -51,6 +51,27 @@ class Qr:
             code = decode(img)
             c_print(f"QR Code Data:", code="normal")
             c_print(f"{code[0].data.decode('utf-8')}", code="success")
+        elif self.action == "open":
+            from ..brain import platform
+            import os
+            if platform() == "win":
+                os.system(f"start {self.dir_make(f'{self.file}.png')}")
+            else:
+                os.system(f"open {self.dir_make(f'{self.file}.png')}")
+        elif self.action == "list":
+            import os
+            c_print(f"Listing QR Codes in {self.dir_make('')}...", code="info")
+            with os.scandir(self.dir_make("")) as entries:
+                for entry in entries:
+                    print(entry.name)
+        elif self.action == "delete":
+            import os
+            c_print(f"Deleting {self.file}.png...", code="info")
+            if os.path.exists(self.dir_make(f'{self.file}.png')):
+                os.remove(self.dir_make(f'{self.file}.png'))
+                c_print(f"Deleted {self.file}.png", code="success")
+            else:
+                c_print(f"{self.file}.png Not Found", code="danger")
         else:
             c_print("Invalid Action", code="danger")
 

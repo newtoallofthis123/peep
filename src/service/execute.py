@@ -113,12 +113,13 @@ class Execute:
             stream = Yt(self.query)
             stream.stream_audio()
 
-    def run(self):
+    def set(self):
+        print(self.action)
         if self.action == "help":
             from .help.help import Help
             help = Help()
             help.run_help()
-        if self.action == "reset":
-            from .help.run import Run
-            run = Run(self.action)
-            run.run()
+        elif self.action == "reset":
+            from .help.setting import Setting
+            setting = Setting(self.action)
+            setting.setting()

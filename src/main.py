@@ -37,8 +37,8 @@ def main():
                 execute.yt()
             if do_what == "music":
                 execute.music()
-            if do_what == "run":
-                execute.run()
+            if do_what == "set":
+                execute.set()
 
 if __name__ == '__main__':
     main()
