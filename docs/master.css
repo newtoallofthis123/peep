@@ -10,12 +10,12 @@
     color: #000000;
 }
 
-/* @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
     :root {
         --background: #181814;
         --color: #e7e2e2;
     }
-} */
+}
 
 body{
     margin: 0px;
