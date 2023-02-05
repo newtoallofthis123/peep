@@ -14,7 +14,7 @@ def c_print(text, code):
     console.print(text, style=code)
 
 def ask(text):
-    ask_response = Confirm.ask(text)
+    ask_response = Confirm.ask(text, default=True)
     return ask_response
 
 def prompt(text):

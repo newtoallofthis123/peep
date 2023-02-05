@@ -63,6 +63,8 @@ class Md:
     def up(self):
         from flask import render_template, Flask, request
         app = Flask(__name__)
+        if ".md" in self.name: self.name = self.name
+        else: self.name = f'{self.name}.md'
         def read(filename):
             try:
                 file = open(filename, 'r')

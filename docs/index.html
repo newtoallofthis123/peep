@@ -38,15 +38,15 @@
             </code>
         </div>
         <h2 class="heading">Usage</h2>
-        <p>Peep uses plain english to help you. 
-            The syntax is very human readable hence there is no need to remember weird command line flags.
+        <p>Peep uses plain english to help you.
+            The syntax is very human-readable hence there is no need to remember weird command line flags.
             Most of all commands in peep have a basic syntax of <code><span style="color: #0004fc;">peep</span> {primary command} {action} {query}</code>
         </p>
         <p>
             This makes it very easy to navigate. For example, if you have to use the editor command for a python file, you can simply type <code><span style="color: #0004fc;">peep</span> editor hello.py python</code> and peep will open the file hello.py in the python editor.
         </p>
         <p>
-            All these command syntaxs are included in the package by default. You can access them by typing <code><span style="color: #0004fc;">peep</span> run commands</code> in the command line. Or you can open this webpage and read the documentation. 
+            All these command syntaxes are included in the package by default. You can access them by typing <code><span style="color: #0004fc;">peep</span> run commands</code> in the command line. Or you can open this webpage and read the documentation. 
         </p>
         <div class="code-div">
             <code>
@@ -64,10 +64,39 @@
         <h3>Editor</h3>
         <p>
             The editor command is used to open files in the editor of your choice.
-            To use the editor command, you can simple enter this <code><span style="color: #0004fc;">peep</span> editor {file} {language}</code>
+            To use the editor command, you can simply enter <code><span style="color: #0004fc;">peep</span> editor {file} {language}</code>
         </p>
+        <p class="list-title">List of supported Languages</p>
+        <ul>
+            <li>python</li>
+            <li>javascript</li>
+            <li>html</li>
+            <li>css</li>
+            <li>c/c++</li>
+            <li>java</li>
+            <li>markdown</li>
+            <li>json</li>
+        </ul>
         <p>
             The language parameter is optional. If you don't specify the language, peep will try to guess the language of the file. If it can't guess the language, it will open the file in the default editor.
+        </p>
+        <h3>Search</h3>
+        <p>
+            This editor command is one of the simplest commands in peep. It is used to search the web.
+            To use the search command, you can simply enter <code><span style="color: #0004fc;">peep</span> search {search_engine} {query}</code>
+        </p>
+        <p class="list-title">List of supported search engines</p>
+        <ul>
+            <li>Google</li>
+            <li>Duckduckgo</li>
+            <li>StartPage</li>
+            <li>YouTube</li>
+            <li>GitHub</li>
+        </ul>
+        <h3>Markdown Editor</h3>
+        <p>
+            This command is used to open a markdown file in the markdown editor.
+            To use the markdown editor command, you can simply enter <code><span style="color: #0004fc;">peep</span> md {file}</code>
         </p>
     </div>
 </body>

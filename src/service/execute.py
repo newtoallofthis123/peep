@@ -11,6 +11,20 @@ class Execute:
         engine = self.action
         query = self.query
         engines = get_ops()["engines"]
+        if engine not in engines:
+            engine = "google"
+            engine_response = ask(f"Search engine not specified, peep wants to use {engine}. Do we continue?")
+            if engine_response:
+                c_print(f"Continuing with {engine}...", code="success")
+            else:
+                engine = prompt("Enter the search engine")
+                if engine in engines:
+                    c_print(f"Continuing with {engine}...", code="success")
+                else:
+                    c_print(f"Search engine {engine} not supported", code="danger")
+                    c_print("Continuing with default...", code="danger")
+                    engine = "google"
+            query = self.action + " " + self.query
         if engine in engines:
             search_query = f'{engines[engine]}{quote(query)}'
             ask_response = ask(f'Do you want to open {engine} in the web browser?')
