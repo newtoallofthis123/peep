@@ -28,6 +28,20 @@ class Execute:
         from .editor.editor import Editor
         file = self.action
         lang = self.query
+        if lang == "":
+            file_mapper = get_ops()["file_stuff"]
+            lang = file_mapper["." + str(file).split('.')[1]]
+            lang_response = ask(f"Language not specified, peep thinks it is {lang} Do we continue?")
+            if lang_response:
+                c_print(f"Continuing with {lang}...", code="success")
+            else:
+                lang = prompt("Enter the language: ")
+                if lang in file_mapper.values():
+                    c_print(f"Continuing with {lang}...", code="success")
+                else:
+                    c_print(f"Language {lang} not supported", code="danger")
+                    c_print("Continuing with default...", code="danger")
+                    lang = "text"
         c_print(f"Trying to Open {file} in SnakeRun Editor", code="info")
         editor_instance = Editor(file, lang)
         editor_instance.open()

@@ -24,5 +24,20 @@
     "yt": "https://www.youtube.com/results?search_query=",
     "github": "https://github.com/search?q=",
     "gh": "https://github.com/search?q="
+  },
+  "file_stuff": {
+    ".py": "python",
+    ".js": "javascript",
+    ".xml": "xml",
+    ".html": "html",
+    ".css": "css",
+    ".jsx": "javascript",
+    ".txt": "text",
+    ".htmlx": "html",
+    ".rb": "ruby",
+    ".cpp": "cpp",
+    ".java": "java",
+    ".json": "json",
+    ".md": "markdown"
   }
 }
