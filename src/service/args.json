@@ -11,7 +11,8 @@
     "qr",
     "img_qr",
     "help",
-    "run"
+    "run",
+    "setting"
   ],
   "engines": {
     "google": "https://www.google.com/search?q=",

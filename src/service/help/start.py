@@ -68,5 +68,5 @@ def intro():
         print("Welcome back to Peep!")
         print("Seems you have already used Peep before. Skipping requirements check...")
         print("Peep is ready to use!")
-        print("If your alias is not working, run the command: peep run alias")
-        print("If you want to reset your intro, run the command: peep run reset\n")
+        print("If your alias is not working, run the command: peep setting alias")
+        print("If you want to reset your intro, run the command: peep setting reset\n")
