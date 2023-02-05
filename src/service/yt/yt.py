@@ -94,3 +94,47 @@ class Yt:
                     "Getting Results from [link=https://yt.be]YouTube[/link]. This might take a while...\n",
                     spinner=choice(spinners)):
                 spider.audio_dl()
+
+    def stream_audio(self):
+        search_term = self.query
+        results = YoutubeSearch(search_term, max_results=20).to_dict()
+        video_url = f'https://youtu.be/{results[0]["id"]}'
+        # video_response:
+        Console().print(Panel(f'Streaming {results[0]["title"]}'))
+        from .spider import YTSpider
+        spider = YTSpider(video_url)
+        from random import choice
+        spinners = ["clock", "monkey", "point", "dots8"]
+        with Console().status(
+                "Getting Results from [link=https://yt.be]YouTube[/link]. This might take a while...\n",
+                spinner=choice(spinners)):
+            video = spider.video_info_spider()
+        from .ui import Ui
+        ui = Ui(video["audio_stream"][0], video)
+        c_print("Starting Server...", code="info")
+        import webbrowser
+        webbrowser.open("http://localhost:5000")
+        c_print("Server Started!&&Opening Browser", code="success")
+        ui.audio_server()
+
+    def stream_video(self):
+        search_term = self.query
+        results = YoutubeSearch(search_term, max_results=20).to_dict()
+        video_url = f'https://youtu.be/{results[0]["id"]}'
+        # video_response:
+        Console().print(Panel(f'Streaming {results[0]["title"]}'))
+        from .spider import YTSpider
+        spider = YTSpider(video_url)
+        from random import choice
+        spinners = ["clock", "monkey", "point", "dots8"]
+        with Console().status(
+                "Getting Results from [link=https://yt.be]YouTube[/link]. This might take a while...\n",
+                spinner=choice(spinners)):
+            video = spider.video_info_spider()
+        from .ui import Ui
+        ui = Ui(video["url_stream"], video)
+        c_print("Starting Server...", code="info")
+        import webbrowser
+        webbrowser.open("http://localhost:5000")
+        c_print("Server Started!&&Opening Browser", code="success")
+        ui.server()

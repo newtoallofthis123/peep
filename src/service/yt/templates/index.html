@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>YTPS Playing {{ info["title"] }}</title>
-    <link rel='shortcut icon' href='{{ url_for("static", filename="icon.ico" ) }}' type='image/x-icon'>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/plyr@3.5.6/dist/plyr.css">
+    <script src="https://cdn.jsdelivr.net/npm/plyr@3.5.6/dist/plyr.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="https://cdn.plyr.io/3.6.12/plyr.polyfilled.js"></script>
+    <script src=""></script>
 </head>
 <style>
     ::-moz-selection { /* Code for Firefox */
@@ -18,6 +22,7 @@
 
     :root{
         overscroll-behavior: none;
+        --plyr-color-main: #282923;
     }
 
     .nav_title {
@@ -33,18 +38,45 @@
         font-size: 3rem;
         text-align: center;
     }
+    h2{
+        font-family: -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Open Sans", "Helvetica Neue", "Icons16", sans-serif;
+        font-size: 2rem;
+        text-align: center;
+        color: #fff;
+    }
+    h3{
+        font-family: -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Open Sans", "Helvetica Neue", "Icons16", sans-serif;
+        font-size: 1.2rem;
+        text-align: center;
+        color: #fff;
+    }
     video{
-        width: 100%;
-        height: 100vh;
+        /*width: 100%;*/
+        /*height: 100vh;*/
     }
 </style>
 <nav>
-    <h1 class="nav_title">🔍 YTPSLive Player v.0.1</h1>
+    <h1 class="nav_title">🔍 YTPS Player v.0.2</h1>
 </nav>
 <body>
-    <h1>{{ info["title"] }}</h1>
-    <div class="video-div">
-        <video src='{{ stream }}' controls playsinline poster="{{ info['thumbnail'] }}" title="Url Stream"></video>
+    <div style="text-align: center;">
+
+        <h2 style="color: #212121; font-size: 24px; padding: 1%;"><span style="color: rgb(12, 131, 243); text-decoration: underline; text-decoration-color: rgb(12, 131, 243);">Now Playing: </span> {{ info["title"] }}</h2>
+        <div id="player_div" style="margin-right: 10%; margin-left: 10%;">
+            <video width="900" height="480" id="player" playsinline controls data-poster="{{ thumnail }}">
+                <source src="{{ stream[0] }}" type="video/webm" size="720">
+                <source src="{{ stream[1] }}" type="video/webm" size="360">
+                Your browser does not support the video tag.
+            </video>
+        </div>
     </div>
-</body
+    <div style="background-color: #212121; padding: 1.4rem; margin-top: 0.8rem; margin-right: 10%; margin-left: 10%; border-radius: 12px; text-align: center;">
+        <h3>The Above Video is the exclusive property of Google LLC and the channel owner. Please don't Misuse the Video</h3>
+    </div>
+</body>
+<script>
+    const player = new Plyr('#player',{
+            title: "{{ info['title'] }}",
+    });
+</script>
 </html>

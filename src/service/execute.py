@@ -70,9 +70,17 @@ class Execute:
             from .yt.yt import Yt
             download = Yt(self.query)
             download.dl_video()
+        if self.action == "stream":
+            from .yt.yt import Yt
+            stream = Yt(self.query)
+            stream.stream_video()
 
     def music(self):
         if self.action == "download":
             from .yt.yt import Yt
             download = Yt(self.query)
             download.dl_audio()
+        if self.action == "stream":
+            from .yt.yt import Yt
+            stream = Yt(self.query)
+            stream.stream_audio()
