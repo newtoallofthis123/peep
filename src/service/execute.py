@@ -84,3 +84,13 @@ class Execute:
             from .yt.yt import Yt
             stream = Yt(self.query)
             stream.stream_audio()
+
+    def run(self):
+        if self.action == "help":
+            from .help.help import Help
+            help = Help()
+            help.run_help()
+        if self.action == "reset":
+            from .help.run import Run
+            run = Run(self.action)
+            run.run()

@@ -9,7 +9,9 @@
     "editor",
     "md",
     "qr",
-    "img_qr"
+    "img_qr",
+    "help",
+    "run"
   ],
   "engines": {
     "google": "https://www.google.com/search?q=",
