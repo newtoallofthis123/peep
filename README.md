@@ -1,5 +1,5 @@
 
-![Header Image]("./docs/static/header_raw.svg")
+![Header Image](/docs/static/header_raw.svg)
 
 ## Personalized Environment and Execution Prompt
 
@@ -68,7 +68,7 @@ List of supported search engines
 
 This command is used to open a markdown file in the markdown editor. To use the markdown editor command, you can simply enter  `peep  md {file}`
 
-![Md Example](./docs/static/md_example.png)
+![Md Example](/docs/static/md_example.png)
 
 ### Ai (Work in progress)
 
