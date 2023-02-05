@@ -20,6 +20,13 @@
 body{
     margin: 0px;
     background-color: var(--background);
+    line-height: 160%;
+}
+
+.code{
+    font-family: 'JetBrains Mono', 'Courier New', Courier, monospace;
+    color: #1500ff;
+    font-size: 1rem;
 }
 
 .title{
@@ -62,7 +69,7 @@ body{
     font-weight: 700;
 }
 
-.code{
+.code-div{
     font-family: 'JetBrains Mono', 'Courier New', Courier, monospace;
     background-color: #000;
     color: #fff;
@@ -71,4 +78,9 @@ body{
     padding-left: 3rem;
     border-radius: 24px;
     font-size: 1.2rem;
+}
+
+h3{
+    font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 2rem;
 }

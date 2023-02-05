@@ -16,12 +16,20 @@
     <h2 class="subtitle">Personalized Environment and Execution Prompt</h2>
     <div class="text">
         <p>
-            PEEP stands for Personalized Environment and Execution Prompt. Okay, full disclosure, I wasn't exactly sure what PEEP
-            stands for, I just used ChatGPT, but I do know what it does. It is a command line tool that allows you to use quick
-            commands quickly in the syntax of standard speech.
+            PEEP is the friendly assistant we have all been looking for. It lives in the command line and loves to improve your command line experience.
+
         </p>
         <h2 class="heading">Installation</h2>
-        <div class="code">
+        <p>
+            For now, there is no pypi package for peep but there are plans to make one in the future. For now, you can install peep by cloning the repository and installing the requirements.
+            If you don't know how to do so, you can download a zip from the github repository and extract it. 
+            Then, open the folder and run <code class="code">start.py</code>
+        </p>
+        <p>Using start.py installs all the dependencies and bootstraps the package to act as a cli. It also adds it to the alias. 
+            If you want to do this manually, you can add the alias to your bashrc or zshrc file. 
+            To set alias, run <code class="code">alias peep=$pwd/src/main.py</code>
+        </p>
+        <div class="code-div">
             <code>
                 <span style="color: #e73d3d;">git</span> clone <a href="https://github.com/newtoallofthis123/peep" style="color: rgb(116, 158, 220);">https://github.com/newtoallofthis123/peep.git</a><br>
                 <span style="color: #05e4f0;">cd</span> peep<br>
@@ -30,6 +38,35 @@
             </code>
         </div>
         <h2 class="heading">Usage</h2>
+        <p>Peep uses plain english to help you. 
+            The syntax is very human readable hence there is no need to remember weird command line flags.
+            Most of all commands in peep have a basic syntax of <code><span style="color: #0004fc;">peep</span> {primary command} {action} {query}</code>
+        </p>
+        <p>
+            This makes it very easy to navigate. For example, if you have to use the editor command for a python file, you can simply type <code><span style="color: #0004fc;">peep</span> editor hello.py python</code> and peep will open the file hello.py in the python editor.
+        </p>
+        <p>
+            All these command syntaxs are included in the package by default. You can access them by typing <code><span style="color: #0004fc;">peep</span> run commands</code> in the command line. Or you can open this webpage and read the documentation. 
+        </p>
+        <div class="code-div">
+            <code>
+                <span style="color: #00ffff;">peep</span> {primary command} {action} {query} <br>
+                <br>
+                <span style="color: #4e5050;">// Example</span>
+                <br>
+                <span style="color: #00ffff">peep</span> editor hello.py python
+            </code>
+        </div>
+        <h2 id="commands" class="heading">Commands</h2>
+        <p>
+            Peep has a lot of commands. You can access them by typing <code><span style="color: #0004fc;">peep</span> run commands</code> in the command line. Or you can open this <a href="#commands">webpage</a> and read the documentation.
+        </p>
+        <h3>Editor</h3>
+        <p>
+            The editor command is used to open files in the editor of your choice.
+            To use the editor command, you can simple enter this <code><span style="color: #0004fc;">peep</span> editor {file} {language}</code>
+            
+        </p>
     </div>
 </body>
 </html>
