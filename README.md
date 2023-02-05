@@ -1,5 +1,5 @@
 
-<img style="width: 50%" src="/docs/static/header_raw.svg" alt="Header">
+<img src="/docs/static/header.svg" alt="Header">
 
 ## Personalized Environment and Execution Prompt
 
