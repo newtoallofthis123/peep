@@ -123,18 +123,26 @@ class Yt:
         video_url = f'https://youtu.be/{results[0]["id"]}'
         # video_response:
         Console().print(Panel(f'Streaming {results[0]["title"]}'))
-        from .spider import YTSpider
-        spider = YTSpider(video_url)
-        from random import choice
-        spinners = ["clock", "monkey", "point", "dots8"]
-        with Console().status(
-                "Getting Results from [link=https://yt.be]YouTube[/link]. This might take a while...\n",
-                spinner=choice(spinners)):
-            video = spider.video_info_spider()
-        from .ui import Ui
-        ui = Ui(video["url_stream"], video)
-        c_print("Starting Server...", code="info")
-        import webbrowser
-        webbrowser.open("http://localhost:5000")
-        c_print("Server Started!&&Opening Browser", code="success")
-        ui.server()
+        private_response = ask(
+            "Do you want to play this video privately or on youtube.com?")
+        if private_response:
+            from .spider import YTSpider
+            spider = YTSpider(video_url)
+            from random import choice
+            spinners = ["clock", "monkey", "point", "dots8"]
+            with Console().status(
+                    "Getting Results from [link=https://yt.be]YouTube[/link]. This might take a while...\n",
+                    spinner=choice(spinners)):
+                video = spider.video_info_spider()
+            from .ui import Ui
+            ui = Ui(video["url_stream"], video)
+            c_print("Starting Server...", code="info")
+            import webbrowser
+            webbrowser.open("http://localhost:5000")
+            c_print("Server Started!&&Opening Browser", code="success")
+            ui.server()
+        else:
+            import webbrowser
+            c_print(f"Opening {results[0]['title']} in your default webbrowser...", code="info")
+            webbrowser.open(
+                "https://youtu.be/" + results[0]["id"] + "?autoplay=1")
