@@ -14,6 +14,7 @@ does = {
     "yt": "Searches YouTube for the query and streams the video",
     "music": "Search music and play in the custom player",
     "setting": "Opens the Settings",
+    "article": "Downloads the article from the web",
 }
 
 class Help:

@@ -134,3 +134,13 @@ class Execute:
             file.delete()
         if self.action == "edit":
             file.edit()
+
+    def article(self):
+        from .articles.article import Article
+        article = Article(self.query)
+        if self.action == "download":
+            article.download()
+        if self.action == "read":
+            article.read()
+        if self.action == "all":
+            article.all()

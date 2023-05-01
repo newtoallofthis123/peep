@@ -13,7 +13,8 @@
     "help",
     "run",
     "setting",
-    "file"
+    "file",
+    "article"
   ],
   "engines": {
     "google": "https://www.google.com/search?q=",

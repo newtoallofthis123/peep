@@ -1,4 +1,4 @@
-from ..format import *
+# from ..format import *
 
 class Ai:
     def __init__(self, key):
@@ -6,7 +6,7 @@ class Ai:
     def ask(self, prompt):
         import openai
         openai.api_key = self.key
-        model_engine = "text-curie-001"
+        model_engine = "text-davinci-003"
         completion = openai.Completion.create(
             engine=model_engine,
             prompt=prompt,
@@ -17,5 +17,9 @@ class Ai:
             presence_penalty=0
         )
         result = completion["choices"][0]
-        c_print(f"OpenAI Response: {result['text']}", code="success")
+        # c_print(f"OpenAI Response: {result['text']}", code="success")
+        print(result["test"])
         return result["text"]
+
+ai = Ai(key="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")
+ai.ask("print hello world in c")

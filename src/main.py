@@ -50,6 +50,8 @@ def main():
                     execute.setting()
                 if do_what == "file":
                     execute.file()
+                if do_what == "article":
+                    execute.article()
 
 if __name__ == '__main__':
     main()

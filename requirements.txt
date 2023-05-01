@@ -6,3 +6,4 @@ openai
 pyzbar
 segno
 youtube_dl
+scrapy
