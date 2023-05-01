@@ -21,5 +21,5 @@ class Ai:
         print(result["test"])
         return result["text"]
 
-ai = Ai(key="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")
+ai = Ai(key="")
 ai.ask("print hello world in c")
